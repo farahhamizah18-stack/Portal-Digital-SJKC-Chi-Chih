@@ -106,14 +106,14 @@
                 isActive: false
             },
             {
-                id: 'comp-lab-record',
-                name: 'Rekod Bilik Komputer',
-                description: 'Rekod kemasukan kelas dan penggunaan peralatan di bilik komputer utama.',
-                url: '#',
-                icon: 'monitor',
+                id: 'bilik-khas-record',
+                name: 'Rekod Penggunaan Bilik Khas',
+                description: 'Sistem log digital untuk merekod penggunaan bilik-bilik khas sekolah bagi tujuan aktiviti dan PdP.',
+                url: 'https://6003rekodpenggunaanbilikkhas.netlify.app/',
+                icon: 'door-open',
                 color: 'indigo',
                 category: 'Logistik Digital',
-                isActive: false
+                isActive: true
             }
         ];
 
@@ -185,7 +185,7 @@
             return (
                 <div className={`group bg-white rounded-2xl border transition-all duration-500 overflow-hidden flex flex-col h-full relative ${app.isActive ? 'border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-200' : 'border-slate-50 opacity-60 grayscale cursor-not-allowed shadow-none'}`}>
                     <div className="p-8 flex-grow">
-                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-500 ${app.isActive ? `${colorMap[app.color]} group-hover:scale-110 group-hover:rotate-3` : 'bg-slate-50 text-slate-300 border-slate-100'}`}>
+                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-500 ${app.isActive ? `${colorMap[app.color] || 'bg-slate-100'} group-hover:scale-110 group-hover:rotate-3` : 'bg-slate-50 text-slate-300 border-slate-100'}`}>
                             <Icon name={app.icon} className="w-7 h-7" />
                         </div>
                         <h3 onClick={() => app.isActive && onOpen(app)} className={`text-xl font-bold mb-3 transition-colors ${app.isActive ? 'text-slate-800 group-hover:text-blue-600 cursor-pointer' : 'text-slate-400'}`}>
