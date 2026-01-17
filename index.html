@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -67,14 +66,14 @@
                 isActive: true
             },
             {
-                id: 'ai-asisten-akademik',
-                name: 'Asisten AI Akademik',
-                description: 'Aplikasi pembantu guru untuk penyediaan bahan bantu mengajar dan rancangan pengajaran harian.',
-                url: '#',
-                icon: 'cpu',
-                color: 'indigo',
+                id: 'rekod-rph',
+                name: 'Rekod Penghantaran RPH',
+                description: 'Sistem pengesahan digital untuk penghantaran Rekod Pengajaran Harian (RPH) bagi memudahkan pemantauan kurikulum.',
+                url: 'https://6003rekodpenghantaranrph.netlify.app/',
+                icon: 'clipboard-check',
+                color: 'blue',
                 category: 'Pengurusan Akademik',
-                isActive: false
+                isActive: true
             },
             {
                 id: 'pencapaian-murid',
@@ -82,6 +81,16 @@
                 description: 'Sistem pengurusan data kokurikulum bersepadu untuk merekod kemenangan dan penglibatan murid dengan lebih sistematik.',
                 url: 'https://6003rekodpencapaianko.netlify.app/',
                 icon: 'trophy',
+                color: 'emerald',
+                category: 'Kokurikulum',
+                isActive: true
+            },
+            {
+                id: 'laporan-koko',
+                name: 'Laporan Mingguan Kokurikulum',
+                description: 'Sistem pengisian laporan aktiviti mingguan kokurikulum secara digital untuk memudahkan pemantauan dan dokumentasi.',
+                url: 'https://6003laporanmingguankokurikulum.netlify.app/',
+                icon: 'file-text',
                 color: 'emerald',
                 category: 'Kokurikulum',
                 isActive: true
@@ -105,33 +114,15 @@
                 color: 'indigo',
                 category: 'Logistik Digital',
                 isActive: false
-            },
-            {
-                id: 'staff-attendance',
-                name: 'Kehadiran Staf',
-                description: 'Portal pengesahan kehadiran harian untuk guru dan staf sokongan.',
-                url: '#',
-                icon: 'calendar',
-                color: 'blue',
-                category: 'Pentadbiran Am',
-                isActive: false
-            },
-            {
-                id: 'library-record',
-                name: 'Sistem Pusat Sumber',
-                description: 'Akses pantas kepada pengurusan dan statistik pusat sumber sekolah (PSS).',
-                url: '#',
-                icon: 'book-open',
-                color: 'teal',
-                category: 'Pentadbiran Am',
-                isActive: false
             }
         ];
 
         // --- KOMPONEN IKON (LUCIDE WRAPPER) ---
         const Icon = ({ name, className }) => {
             useEffect(() => {
-                lucide.createIcons();
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
             }, [name]);
             return <i data-lucide={name} className={className}></i>;
         };
@@ -165,8 +156,17 @@
                             <div className="flex flex-col gap-4">
                                 <p className="text-blue-200/90 text-xl font-semibold tracking-tight">"{TAGLINE}"</p>
                                 <p className="text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed font-medium">
-                                    Satu platform bersepadu untuk akses pantas ke semua aplikasi rasmi {SCHOOL_NAME}.
+                                    Satu platform bersepadu untuk akses pantas ke semua aplikasi rasmi {SCHOOL_NAME}. Memperkasakan transformasi digital sekolah.
                                 </p>
+                            </div>
+                        </div>
+                        <div className="hidden lg:block">
+                            <div className="bg-slate-900/40 backdrop-blur-md border border-white/5 p-6 rounded-2xl flex flex-col items-center min-w-[140px]">
+                                <div className="text-4xl font-black text-white mb-1">{APPS.filter(a => a.isActive).length}</div>
+                                <div className="text-[10px] text-blue-400 uppercase font-black tracking-widest text-center">Modul Aktif</div>
+                                <div className="mt-4 p-2 bg-blue-500/10 rounded-full">
+                                    <Icon name="layout-grid" className="w-5 h-5 text-blue-400" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                 }, {});
             }, []);
 
-            const categoryOrder = ['Pengurusan Akademik', 'Kokurikulum', 'Pentadbiran Am', 'Logistik Digital'];
+            const categoryOrder = ['Pengurusan Akademik', 'Kokurikulum', 'Logistik Digital'];
 
             return (
                 <div className="min-h-screen pb-12">
@@ -266,7 +266,7 @@
                                     <section key={category}>
                                         <div className="flex items-center gap-4 mb-8">
                                             <div className="h-8 w-1.5 bg-blue-600 rounded-full"></div>
-                                            <h2 className="text-2xl font-bold text-slate-800">{category}</h2>
+                                            <h2 className="text-2xl font-bold text-slate-800 tracking-tight">{category}</h2>
                                         </div>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                                             {appsInCategory.map((app) => (
@@ -279,8 +279,9 @@
                         </div>
                     </main>
                     <footer className="mt-24 py-12 border-t border-slate-100 bg-slate-50/50 text-center">
-                        <img src={SCHOOL_LOGO} alt="Logo" className="w-12 h-12 mx-auto mb-4" />
-                        <p className="text-slate-400 text-xs font-medium tracking-wide uppercase">© 2024 SJKC CHI CHIH Digital Hub</p>
+                        <img src={SCHOOL_LOGO} alt="Logo" className="w-12 h-12 mx-auto mb-4 object-contain" />
+                        <p className="text-slate-400 text-xs font-medium tracking-wide uppercase">@2026 Portal Digital SJKC Chi Chih</p>
+                        <p className="text-slate-300 text-[10px] mt-2 italic">Membangunkan Potensi Melalui Transformasi Digital</p>
                     </footer>
                     {activeApp && <EmbedView app={activeApp} onClose={() => setActiveApp(null)} />}
                 </div>
