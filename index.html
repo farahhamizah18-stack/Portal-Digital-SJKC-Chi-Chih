@@ -3,294 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTAL DIGITAL SJKC CHI CHIH</title>
-    
-    <!-- Pustaka Luaran -->
+    <title>Senarai ID DELIMa SJK(C) Chi Chih</title>
+    <!-- Tailwind CSS CDN untuk rekaan korporat dan kemas -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fcfdfe;
-            margin: 0;
-            padding: 0;
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        .glass-effect {
-            background: rgba(15, 23, 42, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background-color: #f3f4f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-    <div id="root"></div>
+<body class="min-h-screen flex flex-col justify-between">
 
-    <script type="text/babel">
-        const { useState, useMemo, useEffect } = React;
+    <!-- Header / Navbar -->
+    <header class="bg-blue-900 text-white shadow-lg py-6 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-2xl md:text-3xl font-bold tracking-wide">
+                <i class="fas fa-graduation-cap mr-2"></i>Senarai ID DELIMa SJK(C) Chi Chih
+            </h1>
+            <p class="text-blue-200 text-sm mt-1">Sistem Semakan ID & Kataluan DELIMa Sekolah</p>
+        </div>
+    </header>
 
-        // --- KONFIGURASI DATA ---
-        const SCHOOL_NAME = "SJKC CHI CHIH";
-        const SCHOOL_LOGO = "https://i.postimg.cc/Xv6nTH13/Untitled-design-(2).png";
-        const TAGLINE = "Ke Arah Sekolah Digital & Lestari";
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto w-full p-4 flex-grow">
 
-        const APPS = [
-            {
-                id: 'minit-curai',
-                name: 'Minit Curai Pintar',
-                description: 'Sistem pintar yang menjana draf minit curai profesional secara automatik, menjimatkan masa pengurusan dokumentasi anda.',
-                url: 'https://6003minitcurai.netlify.app/',
-                icon: 'sparkles',
-                color: 'blue',
-                category: 'Pengurusan Akademik',
-                isActive: true
-            },
-            {
-                id: 'rekod-rph',
-                name: 'Rekod Penghantaran RPH',
-                description: 'Sistem pengesahan digital untuk penghantaran Rekod Pengajaran Harian (RPH) bagi memudahkan pemantauan kurikulum.',
-                url: 'https://6003rekodpenghantaranrph.netlify.app/',
-                icon: 'clipboard-check',
-                color: 'blue',
-                category: 'Pengurusan Akademik',
-                isActive: true
-            },
-            {
-                id: 'pencapaian-murid',
-                name: 'Rekod Pencapaian Murid',
-                description: 'Sistem pengurusan data kokurikulum bersepadu untuk merekod kemenangan dan penglibatan murid dengan lebih sistematik.',
-                url: 'https://6003rekodpencapaianko.netlify.app/',
-                icon: 'trophy',
-                color: 'emerald',
-                category: 'Kokurikulum',
-                isActive: true
-            },
-            {
-                id: 'laporan-koko',
-                name: 'Laporan Mingguan Kokurikulum',
-                description: 'Sistem pengisian laporan aktiviti mingguan kokurikulum secara digital untuk memudahkan pemantauan dan dokumentasi.',
-                url: 'https://6003laporanmingguankokurikulum.netlify.app/',
-                icon: 'file-text',
-                color: 'emerald',
-                category: 'Kokurikulum',
-                isActive: true
-            },
-            {
-                id: 'bilik-khas-record',
-                name: 'Rekod Penggunaan Bilik Khas',
-                description: 'Sistem log digital untuk merekod penggunaan bilik-bilik khas sekolah bagi tujuan aktiviti dan PdP.',
-                url: 'https://6003rekodpenggunaanbilikkhas.netlify.app/',
-                icon: 'door-open',
-                color: 'indigo',
-                category: 'Logistik Digital',
-                isActive: true
-            },
-            {
-                id: 'peralatan-ict-record',
-                name: 'Rekod Penggunaan Peralatan ICT',
-                description: 'Sistem log digital untuk merekod penggunaan pelbagai peralatan ICT sekolah seperti projektor, speaker, dan lain-lain.',
-                url: 'https://6003rekodpenggunaanperalatanict.netlify.app/',
-                icon: 'monitor',
-                color: 'blue',
-                category: 'Logistik Digital',
-                isActive: true
-            }
+        <!-- Navigation Buttons -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+            <button onclick="switchTab('guru')" id="btn-guru" class="nav-btn bg-white hover:bg-blue-50 text-blue-900 border-2 border-blue-900 font-semibold py-3 px-4 rounded-lg shadow transition duration-200 flex items-center justify-center gap-2">
+                <i class="fas fa-chalkboard-teacher"></i> ID DELIMa Guru
+            </button>
+            <button onclick="switchTab('murid')" id="btn-murid" class="nav-btn bg-white hover:bg-blue-50 text-blue-900 border-2 border-blue-900 font-semibold py-3 px-4 rounded-lg shadow transition duration-200 flex items-center justify-center gap-2">
+                <i class="fas fa-user-graduate"></i> ID DELIMa Murid
+            </button>
+            <button onclick="switchTab('sekolah')" id="btn-sekolah" class="nav-btn bg-white hover:bg-blue-50 text-blue-900 border-2 border-blue-900 font-semibold py-3 px-4 rounded-lg shadow transition duration-200 flex items-center justify-center gap-2">
+                <i class="fas fa-school"></i> ID DELIMa Sekolah
+            </button>
+        </div>
+
+        <!-- Section: ID Guru -->
+        <div id="section-guru" class="tab-content bg-white p-6 rounded-xl shadow-md border border-gray-200 hidden">
+            <h2 class="text-xl font-bold text-blue-900 mb-4 border-b pb-2"><i class="fas fa-search mr-2"></i>Semakan ID Guru</h2>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Pilih Nama Guru:</label>
+                <select id="select-guru" onchange="cariGuru()" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                    <option value="">-- Pilih Nama Guru --</option>
+                </select>
+            </div>
+            <div id="card-guru" class="mt-4"></div>
+        </div>
+
+        <!-- Section: ID Murid -->
+        <div id="section-murid" class="tab-content bg-white p-6 rounded-xl shadow-md border border-gray-200 hidden">
+            <h2 class="text-xl font-bold text-blue-900 mb-4 border-b pb-2"><i class="fas fa-search mr-2"></i>Semakan ID Murid</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Pilih Tahun:</label>
+                    <select id="select-tahun" onchange="muatMurid()" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                        <option value="">-- Pilih Tahun --</option>
+                        <option value="1">Tahun 1</option>
+                        <option value="2">Tahun 2</option>
+                        <option value="3">Tahun 3</option>
+                        <option value="4">Tahun 4</option>
+                        <option value="5">Tahun 5</option>
+                        <option value="6">Tahun 6</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Pilih Nama Murid:</label>
+                    <select id="select-murid" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800" disabled>
+                        <option value="">-- Pilih Tahun Terlebih Dahulu --</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">4 Digit Terakhir No. Kad Pengenalan / MyKID:</label>
+                <input type="password" id="ic-security" maxlength="4" placeholder="Contoh: 0495" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+            </div>
+            <button onclick="cariMurid()" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-lg transition duration-200">
+                Semak ID
+            </button>
+            <div id="card-murid" class="mt-4"></div>
+        </div>
+
+        <!-- Section: ID Sekolah (CM, Makmal, Temp) -->
+        <div id="section-sekolah" class="tab-content bg-white p-6 rounded-xl shadow-md border border-gray-200 hidden">
+            <h2 class="text-xl font-bold text-blue-900 mb-4 border-b pb-2"><i class="fas fa-user-shield mr-2"></i>Semakan ID DELIMa Sekolah</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Pilih Kategori ID:</label>
+                    <select id="select-kategori-sekolah" onchange="muatSubKategoriSekolah()" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="admin">ID Content Manager (CM)</option>
+                        <option value="makmal">ID Makmal</option>
+                        <option value="temp">ID Temporary</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Pilih Peranan / Akaun:</label>
+                    <select id="select-akaun-sekolah" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800" disabled>
+                        <option value="">-- Pilih Kategori Terlebih Dahulu --</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Kod Sekuriti:</label>
+                <input type="password" id="sekolah-security" maxlength="4" placeholder="Masukkan 4 digit kod" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800">
+            </div>
+
+            <button onclick="cariSekolah()" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-lg transition duration-200">
+                Semak ID Sekolah
+            </button>
+
+            <div id="card-sekolah" class="mt-4"></div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4 text-sm mt-8">
+        &copy; SJK(C) Chi Chih. Hak Cipta Terpelihara.
+    </footer>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // ==========================================
+        // DATA SEBENAR DARI DOKUMEN GOOGLE DOCS
+        // ==========================================
+        
+        const dataAdmin = [
+            { label: "Admin", peranan: "KPM-SK-Admin", nama: "FARAH HAMIZAH BINTI SAMSUDDIN", email: "sekolah-3808@moe-dl.edu.my", pass: "moe-s3808" },
+            { label: "CM1", peranan: "KPM-SK-Laman", nama: "NORMI BINTI ASMIN", email: "sekolah-3808-cm1@moe-dl.edu.my", pass: "CM1-DELIMA3808" },
+            { label: "CM2", peranan: "KPM-SK-Upacara", nama: "LIM XIN TIAN", email: "sekolah-3808-cm2@moe-dl.edu.my", pass: "CM2-DELIMA3808" },
+            { label: "CM3", peranan: "KPM-SK-GuruData", nama: "JUANG KUN CHANG", email: "sekolah-3808-cm3@moe-dl.edu.my", pass: "chichih6003" },
+            { label: "CM4", peranan: "KPM-SK-PKP", nama: "YONG POH LING", email: "sekolah-3808-cm4@moe-dl.edu.my", pass: "CM4-DELIMA3808" },
+            { label: "CM5", peranan: "KPM-SK-PKHEM", nama: "CHONG XIAN WEN", email: "sekolah-3808-cm5@moe-dl.edu.my", pass: "CM5-DELIMA3808" },
+            { label: "CM6", peranan: "KPM-SK-PKK", nama: "JUANG KUN CHANG", email: "sekolah-3808-cm6@moe-dl.edu.my", pass: "CM6-DELIMA3808" },
+            { label: "CM7", peranan: "KPM-SK-Panitia", nama: "LIM CHA MING", email: "sekolah-3808-cm7@moe-dl.edu.my", pass: "CM7-DELIMA3808" },
+            { label: "CM8", peranan: "KPM-SK-CM", nama: "LIONG AI MING", email: "sekolah-3808-cm8@moe-dl.edu.my", pass: "CM8-DELIMA3808" },
+            { label: "PGB", peranan: "KPM-PGB", nama: "LEE HWEE NGO", email: "sekolah-3808-pgb@moe-dl.edu.my", pass: "DELIMa38082037" }
         ];
 
-        // --- KOMPONEN IKON (LUCIDE WRAPPER) ---
-        const Icon = ({ name, className }) => {
-            useEffect(() => {
-                if (window.lucide) {
-                    window.lucide.createIcons();
+        const dataMakmal = [
+            { nama: "MAKMAL.1-SJK(CINA) CHI CHIH", email: "makmal.1-3808@moe-dl.edu.my", pass: "s3808-makmal1" },
+            { nama: "MAKMAL.2-SJK(CINA) CHI CHIH", email: "makmal.2-3808@moe-dl.edu.my", pass: "s3808-makmal2" },
+            { nama: "MAKMAL.3-SJK(CINA) CHI CHIH", email: "makmal.3-3808@moe-dl.edu.my", pass: "s3808-makmal3" },
+            { nama: "MAKMAL.4-SJK(CINA) CHI CHIH", email: "makmal.4-3808@moe-dl.edu.my", pass: "s3808-makmal4" },
+            { nama: "MAKMAL.5-SJK(CINA) CHI CHIH", email: "makmal.5-3808@moe-dl.edu.my", pass: "s3808-makmal25" }
+        ];
+
+        const dataTemp = [
+            { nama: "GURU TEMP ID-01", email: "g-sk3808tmp01@moe-dl.edu.my", pass: "id-01@jbc6003" },
+            { nama: "GURU TEMP ID-02", email: "g-sk3808tmp02@moe-dl.edu.my", pass: "id-02@jbc6003" },
+            { nama: "GURU TEMP ID-03", email: "g-sk3808tmp03@moe-dl.edu.my", pass: "id-03@jbc6003" },
+            { nama: "GURU TEMP ID-04", email: "g-sk3808tmp04@moe-dl.edu.my", pass: "id-04@jbc6003" },
+            { nama: "GURU TEMP ID-05", email: "g-sk3808tmp05@moe-dl.edu.my", pass: "id-05@jbc6003" }
+        ];
+
+        const dataGuru = [
+            { nama: "CHONG XIAN WEN", email: "g-02042278@moe-dl.edu.my" },
+            { nama: "FARAH HAMIZAH BINTI SAMSUDDIN", email: "g-80460645@moe-dl.edu.my" },
+            { nama: "JUANG KUN CHANG", email: "g-51042279@moe-dl.edu.my" },
+            { nama: "LEE HWEE NGO", email: "g-56036274@moe-dl.edu.my" },
+            { nama: "LIONG AI MING", email: "g-94042282@moe-dl.edu.my" },
+            { nama: "NORMI BINTI ASMIN", email: "g-22568976@moe-dl.edu.my" },
+            { nama: "LIM CHA MING", email: "g-48042225@moe-dl.edu.my" },
+            { nama: "LIM XIN TIAN", email: "limxintian02@moe-dl.edu.my" },
+            { nama: "YONG POH LING", email: "g-54042287@moe-dl.edu.my" }
+        ];
+
+        const dataMurid = [
+            { nama: "MUHAMMAD IDRIS BIN MOHD SAIFULREZUAN", tahun: "1", email: "muhammadidris.mohdsaifulrezuan@moe-dl.edu.my", pass: "Idris@2026", icLast4: "0495" },
+            { nama: "NUR DIANDRA BINTI ABDUL AZIM", tahun: "2", email: "m-15867870@moe-dl.edu.my", pass: "Diandra@2025", icLast4: "2138" },
+            { nama: "EVAN CHENG YU ZE", tahun: "3", email: "m-15511266@moe-dl.edu.my", pass: "Evan@2024", icLast4: "0239" },
+            { nama: "NUR IJAZ ARYAN BIN ABDUL AZIM", tahun: "3", email: "m-15511268@moe-dl.edu.my", pass: "Ijaz@2024", icLast4: "1311" },
+            { nama: "NUR ALISHA BINTI ABDUL HAKIM", tahun: "3", email: "m-15511267@moe-dl.edu.my", pass: "Alisha@2024", icLast4: "0214" },
+            { nama: "NUR SOFEA HUMAIRA BINTI MOHD SAIFULREZUAN", tahun: "3", email: "m-15511269@moe-dl.edu.my", pass: "Sofea@2024", icLast4: "0110" },
+            { nama: "SIOW YUN WEN", tahun: "4", email: "m-14844180@moe-dl.edu.my", pass: "Yunwen12345", icLast4: "0708" },
+            { nama: "JARREL CHENG CHEN XI", tahun: "5", email: "m-14204601@moe-dl.edu.my", pass: "JBC60011", icLast4: "0943" },
+            { nama: "KIEW JIA MIN", tahun: "5", email: "m-14226108@moe-dl.edu.my", pass: "Jiamin12345", icLast4: "1448" },
+            { nama: "NUR AISYAH ELEUNIEY ZAHRAH BINTI MOHD JUNAIDI", tahun: "5", email: "m-14226182@moe-dl.edu.my", pass: "Aisyah12345", icLast4: "0234" },
+            { nama: "TAY JING XUAN", tahun: "5", email: "m-14226233@moe-dl.edu.my", pass: "Jingxuan12345", icLast4: "2072" },
+            { nama: "HASLINA BINTI ZAINI", tahun: "6", email: "m-13693523@moe-dl.edu.my", pass: "Haslina12345", icLast4: "1002" },
+            { nama: "LETTICE HO MEL XUAN", tahun: "6", email: "m-13693690@moe-dl.edu.my", pass: "Lettice12345", icLast4: "0194" },
+            { nama: "NUR AINUN ADLINA BINTI MUHAMMAD AMIRUL AIMAN NG", tahun: "6", email: "m-13693693@moe-dl.edu.my", pass: "NurAinun12345", icLast4: "1292" }
+        ];
+
+        // ==========================================
+        // LOGIK APLIKASI WEB
+        // ==========================================
+
+        window.onload = function() {
+            switchTab('guru');
+            populateGuruDropdown();
+        };
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-900', 'text-white');
+                btn.classList.add('bg-white', 'text-blue-900');
+            });
+
+            document.getElementById(`section-${tabName}`).classList.remove('hidden');
+            
+            const activeBtn = document.getElementById(`btn-${tabName}`);
+            activeBtn.classList.remove('bg-white', 'text-blue-900');
+            activeBtn.classList.add('bg-blue-900', 'text-white');
+        }
+
+        // --- ID GURU ---
+        function populateGuruDropdown() {
+            const select = document.getElementById('select-guru');
+            dataGuru.forEach(guru => {
+                let opt = document.createElement('option');
+                opt.value = guru.nama;
+                opt.innerHTML = guru.nama;
+                select.appendChild(opt);
+            });
+        }
+
+        function cariGuru() {
+            const nama = document.getElementById('select-guru').value;
+            const container = document.getElementById('card-guru');
+            
+            if(!nama) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const guru = dataGuru.find(g => g.nama === nama);
+            if(guru) {
+                container.innerHTML = createCardHTML(guru.nama, "Guru Sekolah", guru.email, null);
+            }
+        }
+
+        // --- ID MURID ---
+        function muatMurid() {
+            const tahun = document.getElementById('select-tahun').value;
+            const selectMurid = document.getElementById('select-murid');
+            selectMurid.innerHTML = '<option value="">-- Pilih Nama Murid --</option>';
+
+            if(!tahun) {
+                selectMurid.disabled = true;
+                return;
+            }
+
+            const muridFiltered = dataMurid.filter(m => m.tahun === tahun);
+            muridFiltered.forEach(m => {
+                let opt = document.createElement('option');
+                opt.value = m.nama;
+                opt.innerHTML = m.nama;
+                selectMurid.appendChild(opt);
+            });
+
+            selectMurid.disabled = false;
+        }
+
+        function cariMurid() {
+            const nama = document.getElementById('select-murid').value;
+            const icInput = document.getElementById('ic-security').value.trim();
+            const container = document.getElementById('card-murid');
+
+            if(!nama) {
+                alert("Sila pilih nama murid terlebih dahulu.");
+                return;
+            }
+
+            const murid = dataMurid.find(m => m.nama === nama);
+
+            if(murid && murid.icLast4 === icInput) {
+                container.innerHTML = createCardHTML(murid.nama, `Murid (Tahun ${murid.tahun})`, murid.email, murid.pass);
+            } else {
+                alert("4 Digit Terakhir No. Kad Pengenalan / MyKID Tidak Tepat!");
+                container.innerHTML = '';
+            }
+        }
+
+        // --- ID SEKOLAH (CM, MAKMAL, TEMP) ---
+        function muatSubKategoriSekolah() {
+            const kat = document.getElementById('select-kategori-sekolah').value;
+            const selectAkaun = document.getElementById('select-akaun-sekolah');
+            const cardContainer = document.getElementById('card-sekolah');
+            
+            selectAkaun.innerHTML = '<option value="">-- Pilih Peranan / Akaun --</option>';
+            cardContainer.innerHTML = '';
+
+            if(!kat) {
+                selectAkaun.disabled = true;
+                return;
+            }
+
+            if(kat === 'admin') {
+                dataAdmin.forEach(a => {
+                    let opt = document.createElement('option');
+                    opt.value = a.label;
+                    opt.innerHTML = a.label;
+                    selectAkaun.appendChild(opt);
+                });
+            } else if(kat === 'makmal') {
+                dataMakmal.forEach(m => {
+                    let opt = document.createElement('option');
+                    opt.value = m.nama;
+                    opt.innerHTML = m.nama;
+                    selectAkaun.appendChild(opt);
+                });
+            } else if(kat === 'temp') {
+                dataTemp.forEach(t => {
+                    let opt = document.createElement('option');
+                    opt.value = t.nama;
+                    opt.innerHTML = t.nama;
+                    selectAkaun.appendChild(opt);
+                });
+            }
+
+            selectAkaun.disabled = false;
+        }
+
+        function cariSekolah() {
+            const kat = document.getElementById('select-kategori-sekolah').value;
+            const val = document.getElementById('select-akaun-sekolah').value;
+            const passCode = document.getElementById('sekolah-security').value.trim();
+            const container = document.getElementById('card-sekolah');
+
+            if(!kat || !val) {
+                alert("Sila pilih kategori dan peranan / akaun terlebih dahulu.");
+                return;
+            }
+
+            if(passCode !== '0000') {
+                alert("Kod Sekuriti Salah! Masukkan kod 0000.");
+                container.innerHTML = '';
+                return;
+            }
+
+            if(kat === 'admin') {
+                const item = dataAdmin.find(a => a.label === val);
+                if(item) {
+                    container.innerHTML = createCardHTML(item.label, `Peranan: ${item.peranan} (${item.nama})`, item.email, item.pass);
                 }
-            }, [name]);
-            return <i data-lucide={name} className={className}></i>;
-        };
+            } else if(kat === 'makmal') {
+                const item = dataMakmal.find(m => m.nama === val);
+                if(item) {
+                    container.innerHTML = createCardHTML(item.nama, "ID Makmal", item.email, item.pass);
+                }
+            } else if(kat === 'temp') {
+                const item = dataTemp.find(t => t.nama === val);
+                if(item) {
+                    container.innerHTML = createCardHTML(item.nama, "ID Temporary", item.email, item.pass);
+                }
+            }
+        }
 
-        // --- SUB-KOMPONEN ---
-
-        const Header = () => (
-            <header className="relative bg-[#020617] overflow-hidden border-b border-blue-500/20">
-                <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-                <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#fbbf24 1px, transparent 1px)', backgroundSize: '80px 80px' }}></div>
-                <div className="absolute top-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"></div>
-
-                <div className="max-w-6xl mx-auto px-6 py-16 relative z-10">
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
-                        <div className="flex-shrink-0 mt-4">
-                            <img src={SCHOOL_LOGO} alt="Logo" className="w-32 h-32 md:w-40 md:h-40 object-contain block" />
+        // Template Kad
+        function createCardHTML(title, subtitle, email, password) {
+            return `
+                <div class="bg-blue-50 border-l-4 border-blue-900 p-4 rounded-r-lg shadow-sm">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-lg">${title}</h4>
+                            <span class="inline-block bg-blue-200 text-blue-900 text-xs px-2 py-0.5 rounded font-semibold mt-1">${subtitle}</span>
                         </div>
-                        <div className="text-center md:text-left flex-grow">
-                            <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
-                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-400/20 text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] mx-auto md:mx-0">
-                                    <Icon name="sparkles" className="w-3 h-3" />
-                                    Next-Gen School Portal
-                                </span>
-                            </div>
-                            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4 leading-[1.1]">
-                                PORTAL DIGITAL <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-yellow-200/50 to-blue-500">
-                                    {SCHOOL_NAME}
-                                </span>
-                            </h1>
-                            <div className="flex flex-col gap-4">
-                                <p className="text-blue-200/90 text-xl font-semibold tracking-tight">"{TAGLINE}"</p>
-                                <p className="text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed font-medium">
-                                    Satu platform bersepadu untuk akses pantas ke semua aplikasi rasmi {SCHOOL_NAME}. Memperkasakan transformasi digital sekolah.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="hidden lg:block">
-                            <div className="bg-slate-900/40 backdrop-blur-md border border-white/5 p-6 rounded-2xl flex flex-col items-center min-w-[140px]">
-                                <div className="text-4xl font-black text-white mb-1">{APPS.filter(a => a.isActive).length}</div>
-                                <div className="text-[10px] text-blue-400 uppercase font-black tracking-widest text-center">Modul Aktif</div>
-                                <div className="mt-4 p-2 bg-blue-500/10 rounded-full">
-                                    <Icon name="layout-grid" className="w-5 h-5 text-blue-400" />
-                                </div>
-                            </div>
-                        </div>
+                        <i class="fas fa-id-card text-2xl text-blue-900"></i>
+                    </div>
+                    <div class="mt-3 text-sm text-gray-700 space-y-1">
+                        <p><strong>Email:</strong> <span class="select-all text-blue-900 font-mono">${email}</span></p>
+                        ${password ? `<p><strong>Password:</strong> <span class="select-all font-mono">${password}</span></p>` : ''}
                     </div>
                 </div>
-            </header>
-        );
-
-        const AppCard = ({ app, onOpen }) => {
-            const colorMap = {
-                blue: 'bg-blue-100 text-blue-700 border-blue-200',
-                teal: 'bg-teal-100 text-teal-700 border-teal-200',
-                indigo: 'bg-indigo-100 text-indigo-700 border-indigo-200',
-                emerald: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-            };
-
-            return (
-                <div className={`group bg-white rounded-2xl border transition-all duration-500 overflow-hidden flex flex-col h-full relative ${app.isActive ? 'border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-200' : 'border-slate-50 opacity-60 grayscale cursor-not-allowed shadow-none'}`}>
-                    <div className="p-8 flex-grow">
-                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-500 ${app.isActive ? `${colorMap[app.color] || 'bg-slate-100'} group-hover:scale-110 group-hover:rotate-3` : 'bg-slate-50 text-slate-300 border-slate-100'}`}>
-                            <Icon name={app.icon} className="w-7 h-7" />
-                        </div>
-                        <h3 onClick={() => app.isActive && onOpen(app)} className={`text-xl font-bold mb-3 transition-colors ${app.isActive ? 'text-slate-800 group-hover:text-blue-600 cursor-pointer' : 'text-slate-400'}`}>
-                            {app.name}
-                        </h3>
-                        <p className={`text-sm leading-relaxed mb-4 ${app.isActive ? 'text-slate-500' : 'text-slate-300'}`}>
-                            {app.description}
-                        </p>
-                    </div>
-                    <div className="px-8 pb-8 mt-auto">
-                        <button onClick={() => app.isActive && onOpen(app)} disabled={!app.isActive} className={`w-full flex items-center justify-between gap-2 py-4 px-6 rounded-xl transition-all duration-300 shadow-sm font-bold ${app.isActive ? 'bg-slate-50 text-slate-700 group-hover:bg-blue-600 group-hover:text-white' : 'bg-slate-50 text-slate-300 cursor-not-allowed'}`}>
-                            <span>{app.isActive ? 'Buka Aplikasi' : 'Akan Datang'}</span>
-                            {app.isActive ? <Icon name="arrow-up-right" className="w-5 h-5 opacity-0 group-hover:opacity-100" /> : <Icon name="lock" className="w-4 h-4" />}
-                        </button>
-                    </div>
-                </div>
-            );
-        };
-
-        const EmbedView = ({ app, onClose }) => {
-            const [isLoading, setIsLoading] = useState(true);
-            return (
-                <div className="fixed inset-0 z-50 bg-gray-50 flex flex-col">
-                    <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
-                        <div className="flex items-center gap-4">
-                            <button onClick={onClose} className="flex items-center gap-1 text-gray-600 hover:text-blue-600 font-medium transition-colors">
-                                <Icon name="chevron-left" className="w-5 h-5" /> Kembali
-                            </button>
-                            <div className="h-6 w-px bg-gray-200"></div>
-                            <h2 className="text-lg font-bold text-gray-800 leading-none">{app.name}</h2>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <button onClick={() => {setIsLoading(true); document.getElementById('app-iframe').src = app.url;}} className="p-2 text-gray-400 hover:text-blue-600 rounded-lg">
-                                <Icon name="refresh-cw" className={`w-5 h-5 ${isLoading ? 'animate-spin' : ''}`} />
-                            </button>
-                            <a href={app.url} target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-blue-600 rounded-lg">
-                                <Icon name="external-link" className="w-5 h-5" />
-                            </a>
-                        </div>
-                    </div>
-                    <div className="flex-grow relative">
-                        {isLoading && (
-                            <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-10">
-                                <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-4"></div>
-                                <p className="text-gray-600 font-medium animate-pulse">Menghubungkan ke sistem...</p>
-                            </div>
-                        )}
-                        <iframe id="app-iframe" src={app.url} className="w-full h-full border-none" onLoad={() => setIsLoading(false)} />
-                    </div>
-                </div>
-            );
-        };
-
-        // --- MAIN APP ---
-
-        const App = () => {
-            const [activeApp, setActiveApp] = useState(null);
-
-            const groupedApps = useMemo(() => {
-                return APPS.reduce((acc, app) => {
-                    if (!acc[app.category]) acc[app.category] = [];
-                    acc[app.category].push(app);
-                    return acc;
-                }, {});
-            }, []);
-
-            const categoryOrder = ['Pengurusan Akademik', 'Kokurikulum', 'Logistik Digital'];
-
-            return (
-                <div className="min-h-screen pb-12">
-                    <Header />
-                    <main className="max-w-6xl mx-auto px-6 mt-12">
-                        <div className="space-y-16">
-                            {categoryOrder.map((category) => {
-                                const appsInCategory = groupedApps[category];
-                                if (!appsInCategory) return null;
-                                return (
-                                    <section key={category}>
-                                        <div className="flex items-center gap-4 mb-8">
-                                            <div className="h-8 w-1.5 bg-blue-600 rounded-full"></div>
-                                            <h2 className="text-2xl font-bold text-slate-800 tracking-tight">{category}</h2>
-                                        </div>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                                            {appsInCategory.map((app) => (
-                                                <AppCard key={app.id} app={app} onOpen={setActiveApp} />
-                                            ))}
-                                        </div>
-                                    </section>
-                                );
-                            })}
-                        </div>
-                    </main>
-                    <footer className="mt-24 py-12 border-t border-slate-100 bg-slate-50/50 text-center">
-                        <img src={SCHOOL_LOGO} alt="Logo" className="w-12 h-12 mx-auto mb-4 object-contain" />
-                        <p className="text-slate-400 text-xs font-medium tracking-wide uppercase">@2026 Portal Digital SJKC Chi Chih</p>
-                        <p className="text-slate-300 text-[10px] mt-2 italic">Membangunkan Potensi Melalui Transformasi Digital</p>
-                    </footer>
-                    {activeApp && <EmbedView app={activeApp} onClose={() => setActiveApp(null)} />}
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+            `;
+        }
     </script>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
