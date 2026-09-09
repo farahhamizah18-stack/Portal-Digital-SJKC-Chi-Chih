@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL DIGITAL SJKC CHI CHIH</title>
+    
+    <!-- Tailwind CSS & Font Awesome CDN untuk sokongan kendiri (standalone) tanpa perlukan build tool -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfe;
+            margin: 0;
+            padding: 0;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .glass-effect {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#fcfdfe] pb-12 flex flex-col">
+
+    <!-- Header Section -->
+    <header class="relative bg-[#020617] overflow-hidden border-b border-blue-500/20">
+        <!-- Abstract Pattern: Dots Grid with Yellow Hint -->
+        <div class="absolute inset-0 opacity-[0.1]" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(#fbbf24 1px, transparent 1px); background-size: 80px 80px;"></div>
+        
+        <!-- Yellow Hint Accent Line -->
+        <div class="absolute top-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"></div>
+
+        <div class="max-w-6xl mx-auto px-6 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+                
+                <!-- Logo Section -->
+                <div class="flex-shrink-0 mt-4">
+                    <img 
+                        src="https://i.postimg.cc/Xv6nTH13/Untitled-design-(2).png" 
+                        alt="Logo SJKC CHI CHIH" 
+                        class="w-32 h-32 md:w-40 md:h-40 object-contain block bg-transparent"
+                        style="background: none; border: none;"
+                    />
+                </div>
+
+                <div class="text-center md:text-left flex-grow">
+                    <div class="flex flex-col md:flex-row md:items-center gap-3 mb-4">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-400/20 text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] mx-auto md:mx-0">
+                            <i class="fas fa-wand-magic-sparkles text-xs"></i>
+                            Next-Gen School Portal
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4 leading-[1.1]">
+                        PORTAL DIGITAL <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-yellow-200/50 to-blue-500">
+                            SJKC CHI CHIH
+                        </span>
+                    </h1>
+                    
+                    <div class="flex flex-col gap-4">
+                        <p class="text-blue-200/90 text-xl font-semibold tracking-tight">
+                            "Ke Arah Sekolah Digital & Lestari"
+                        </p>
+                        
+                        <p class="text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed font-medium">
+                            Satu platform bersepadu untuk akses pantas ke semua aplikasi rasmi SJKC CHI CHIH. 
+                            Memperkasakan transformasi digital bagi ekosistem pendidikan yang lebih lestari.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Minimalist Stat Box -->
+                <div class="hidden lg:block">
+                    <div class="bg-slate-900/40 backdrop-blur-md border border-white/5 p-6 rounded-2xl flex flex-col items-center min-w-[140px]">
+                        <div id="total-modul-stat" class="text-4xl font-black text-white mb-1">7</div>
+                        <div class="text-[10px] text-blue-400 uppercase font-black tracking-widest text-center">Modul Aktif</div>
+                        <div class="mt-4 p-2 bg-blue-500/10 rounded-full">
+                            <i class="fas fa-border-all text-blue-400 text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-6 mt-12 flex-grow w-full">
+        <div id="apps-container" class="space-y-20">
+            <!-- App categories and cards will be dynamically rendered here -->
+        </div>
+
+        <!-- Pusat Bantuan & Teknikal -->
+        <div class="mt-24 p-8 bg-slate-50 rounded-[2rem] border border-slate-200/60 flex flex-col md:flex-row items-center gap-8">
+            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
+                <i class="far fa-circle-question text-3xl"></i>
+            </div>
+            <div class="text-center md:text-left flex-grow">
+                <h4 class="font-bold text-slate-800 text-lg">Pusat Bantuan & Teknikal</h4>
+                <p class="text-slate-500 mt-1 max-w-xl text-sm">
+                    Menghadapi masalah akses? Sila hubungi Unit ICT sekolah untuk sokongan teknikal.
+                </p>
+            </div>
+            <button onclick="bukaBantuan()" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-sm transition-all shadow-lg shadow-blue-200 active:scale-95">
+                Bantuan ICT
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 py-12 border-t border-slate-100 bg-slate-50/50">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+            <img 
+                src="https://i.postimg.cc/Xv6nTH13/Untitled-design-(2).png" 
+                alt="Logo" 
+                class="w-14 h-14 mb-6 object-contain" 
+                style="background: none;"
+            />
+            <p class="text-slate-400 text-xs font-medium tracking-wide uppercase">
+                @2026 Portal Digital SJKC Chi Chih
+            </p>
+            <p class="text-slate-300 text-[10px] mt-2 italic">
+                Membangunkan Potensi Melalui Transformasi Digital
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal / Embed View (Iframe Overlay) -->
+    <div id="embed-modal" class="fixed inset-0 z-50 bg-gray-50 flex flex-col hidden">
+        <!-- Top Bar Navigation -->
+        <div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-4">
+                <button 
+                    onclick="tutupEmbed()" 
+                    class="flex items-center gap-1 text-gray-600 hover:text-blue-600 font-medium transition-colors"
+                >
+                    <i class="fas fa-chevron-left text-sm"></i>
+                    <span>Kembali</span>
+                </button>
+                <div class="h-6 w-px bg-gray-200"></div>
+                <div class="flex flex-col">
+                    <h2 id="modal-app-name" class="text-lg font-bold text-gray-800 leading-none">Nama Aplikasi</h2>
+                    <span class="text-xs text-gray-400 mt-1 hidden sm:block">Aplikasi Sekolah Digital</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <button 
+                    onclick="reloadIframe()" 
+                    title="Muat semula"
+                    class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                >
+                    <i id="reload-icon" class="fas fa-rotate-right text-base"></i>
+                </button>
+                <a 
+                    id="modal-external-link" 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Buka di tab baru"
+                    class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                >
+                    <i class="fas fa-arrow-up-right-from-square text-base"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Iframe Content -->
+        <div class="flex-grow relative flex flex-col">
+            <!-- External site warning banner -->
+            <div id="modal-warning-banner" class="bg-amber-50 border-b border-amber-200 px-6 py-3 items-center justify-between text-amber-800 text-xs font-semibold gap-4 shadow-sm z-10 hidden">
+                <div class="flex items-center gap-2.5">
+                    <span class="flex h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span>Sekiranya modul ini disekat atau tidak dipaparkan oleh pelayar, sila buka secara terus di tab baru.</span>
+                </div>
+                <a 
+                    id="banner-external-link" 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-1.5 rounded-xl font-bold text-xs transition-all shadow-md flex items-center gap-1.5 shrink-0"
+                >
+                    <span>Buka Tab Baru</span>
+                    <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="flex-grow relative w-full h-full">
+                <!-- Loading Spinner -->
+                <div id="modal-loading" class="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-10">
+                    <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-4"></div>
+                    <p class="text-gray-600 font-medium animate-pulse">Menghubungkan ke sistem...</p>
+                </div>
+
+                <!-- Iframe -->
+                <iframe 
+                    id="app-iframe"
+                    src=""
+                    class="w-full h-full border-none"
+                    title="Aplikasi"
+                    onload="iframeLoaded()"
+                    sandbox="allow-forms allow-popups allow-scripts allow-same-origin"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Data & Logic (Semua terbina dalam 1 fail kendiri) -->
+    <script>
+        const APPS = [
+            // 1. Pengurusan Akademik
+            {
+                id: 'minit-curai',
+                name: 'Minit Curai Pintar',
+                description: 'Sistem pintar yang menjana draf minit curai profesional secara automatik, menjimatkan masa pengurusan dokumentasi anda.',
+                url: './minit-curai.html',
+                icon: 'fa-wand-magic-sparkles',
+                color: 'blue',
+                category: 'Pengurusan Akademik',
+                isActive: true
+            },
+            {
+                id: 'rekod-rph',
+                name: 'Rekod Penghantaran RPH',
+                description: 'Sistem pengesahan digital untuk penghantaran Rekod Pengajaran Harian (RPH) bagi memudahkan pemantauan kurikulum.',
+                url: 'https://6003rekodpenghantaranrph.netlify.app/',
+                icon: 'fa-clipboard-check',
+                color: 'blue',
+                category: 'Pengurusan Akademik',
+                isActive: true
+            },
+            // 2. Kokurikulum
+            {
+                id: 'pencapaian-murid',
+                name: 'Rekod Pencapaian Murid',
+                description: 'Sistem pengurusan data kokurikulum bersepadu untuk merekod kemenangan dan penglibatan murid dengan lebih sistematik dan pantas.',
+                url: 'https://6003rekodpencapaianko.netlify.app/',
+                icon: 'fa-trophy',
+                color: 'emerald',
+                category: 'Kokurikulum',
+                isActive: true
+            },
+            {
+                id: 'laporan-koko',
+                name: 'Laporan Mingguan Kokurikulum',
+                description: 'Sistem pengisian laporan aktiviti mingguan kokurikulum secara digital untuk memudahkan pemantauan dan dokumentasi.',
+                url: './laporan-koko.html',
+                icon: 'fa-file-lines',
+                color: 'emerald',
+                category: 'Kokurikulum',
+                isActive: true
+            },
+            // 3. Logistik Digital
+            {
+                id: 'bilik-khas-record',
+                name: 'Rekod Penggunaan Bilik Khas',
+                description: 'Sistem log digital untuk merekod penggunaan bilik-bilik khas sekolah bagi tujuan aktiviti dan PdP.',
+                url: 'https://6003rekodpenggunaanbilikkhas.netlify.app/',
+                icon: 'fa-door-open',
+                color: 'indigo',
+                category: 'Logistik Digital',
+                isActive: true
+            },
+            {
+                id: 'peralatan-ict-record',
+                name: 'Rekod Penggunaan Peralatan ICT',
+                description: 'Sistem log digital untuk merekod penggunaan pelbagai peralatan ICT sekolah seperti projektor, speaker, dan lain-lain.',
+                url: './peralatan-ict-record.html',
+                icon: 'fa-desktop',
+                color: 'blue',
+                category: 'Logistik Digital',
+                isActive: true
+            },
+            {
+                id: 'id-delima',
+                name: 'ID DELIMa',
+                description: 'Sistem semakan ID dan kata laluan DELIMa bagi guru, murid serta akaun rasmi sekolah.',
+                url: './id-delima.html',
+                icon: 'fa-graduation-cap',
+                color: 'indigo',
+                category: 'Logistik Digital',
+                isActive: true
+            }
+        ];
+
+        const categoryOrder = [
+            'Pengurusan Akademik',
+            'Kokurikulum',
+            'Logistik Digital'
+        ];
+
+        const colorMap = {
+            blue: 'bg-blue-100 text-blue-700 border-blue-200',
+            teal: 'bg-teal-100 text-teal-700 border-teal-200',
+            indigo: 'bg-indigo-100 text-indigo-700 border-indigo-200',
+            emerald: 'bg-emerald-100 text-emerald-700 border-emerald-200'
+        };
+
+        function renderPortal() {
+            const container = document.getElementById('apps-container');
+            if (!container) return;
+
+            // Group apps by category
+            const grouped = {};
+            APPS.forEach(app => {
+                if (!grouped[app.category]) grouped[app.category] = [];
+                grouped[app.category].push(app);
+            });
+
+            let html = '';
+
+            categoryOrder.forEach(category => {
+                const apps = grouped[category];
+                if (!apps || apps.length === 0) return;
+
+                html += `
+                <section class="scroll-mt-8">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="h-10 w-1.5 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full"></div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-800 tracking-tight">
+                                ${category}
+                            </h2>
+                            <div class="h-1 w-12 bg-blue-100 rounded-full mt-1"></div>
+                        </div>
+                        <span class="ml-auto text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] bg-slate-100 px-3 py-1 rounded-md">
+                            ${apps.length} MODUL
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${apps.map(app => `
+                            <div class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-500 overflow-hidden flex flex-col h-full relative">
+                                <div class="p-8 flex-grow">
+                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-500 ${colorMap[app.color] || 'bg-slate-100 text-slate-700 border-slate-200'} group-hover:scale-110 group-hover:rotate-3">
+                                        <i class="fas ${app.icon} text-2xl"></i>
+                                    </div>
+                                    
+                                    <h3 
+                                        onclick="bukaApp('${app.id}')"
+                                        class="text-xl font-bold mb-3 transition-colors text-slate-800 group-hover:text-blue-600 cursor-pointer"
+                                    >
+                                        ${app.name}
+                                    </h3>
+                                    
+                                    <p class="text-sm leading-relaxed mb-4 text-slate-500">
+                                        ${app.description}
+                                    </p>
+                                </div>
+
+                                <div class="px-8 pb-8 mt-auto">
+                                    <button 
+                                        onclick="bukaApp('${app.id}')"
+                                        class="w-full flex items-center justify-between gap-2 py-4 px-6 rounded-xl transition-all duration-300 shadow-sm font-bold bg-slate-50 text-slate-700 group-hover:bg-blue-600 group-hover:text-white"
+                                    >
+                                        <span>Buka Aplikasi</span>
+                                        <i class="fas fa-arrow-up-right-from-square text-sm opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        let currentActiveUrl = '';
+
+        function bukaApp(appId) {
+            const app = APPS.find(a => a.id === appId);
+            if (!app) return;
+
+            currentActiveUrl = app.url;
+            document.getElementById('modal-app-name').innerText = app.name;
+            document.getElementById('modal-external-link').href = app.url;
+
+            const warningBanner = document.getElementById('modal-warning-banner');
+            const bannerLink = document.getElementById('banner-external-link');
+            if (app.url.startsWith('http')) {
+                warningBanner.classList.remove('hidden');
+                warningBanner.classList.add('flex');
+                bannerLink.href = app.url;
+            } else {
+                warningBanner.classList.add('hidden');
+                warningBanner.classList.remove('flex');
+            }
+
+            const loading = document.getElementById('modal-loading');
+            loading.classList.remove('hidden');
+
+            const iframe = document.getElementById('app-iframe');
+            iframe.src = app.url;
+
+            document.getElementById('embed-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function tutupEmbed() {
+            document.getElementById('embed-modal').classList.add('hidden');
+            const iframe = document.getElementById('app-iframe');
+            iframe.src = 'about:blank';
+            document.body.style.overflow = '';
+        }
+
+        function reloadIframe() {
+            const iframe = document.getElementById('app-iframe');
+            const loading = document.getElementById('modal-loading');
+            loading.classList.remove('hidden');
+            const icon = document.getElementById('reload-icon');
+            icon.classList.add('fa-spin');
+            iframe.src = currentActiveUrl;
+            setTimeout(() => {
+                icon.classList.remove('fa-spin');
+            }, 800);
+        }
+
+        function iframeLoaded() {
+            const loading = document.getElementById('modal-loading');
+            if (loading) {
+                loading.classList.add('hidden');
+            }
+        }
+
+        function bukaBantuan() {
+            alert("Pusat Bantuan ICT SJK(C) Chi Chih:\n\nSila hubungi Penyelaras ICT atau Pentadbir Sistem Sekolah di pejabat sekolah untuk sebarang sokongan teknikal.");
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                tutupEmbed();
+            }
+        });
+
+        // Inisialisasi portal secara automatik
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderPortal);
+        } else {
+            renderPortal();
+        }
+    </script>
+</body>
+</html>
